@@ -3,23 +3,31 @@
 //
 #include "superkarel.h"
 
-void turn_right();
-void find_center();
-bool check();
 
-int main() {
-    turn_on("task_10.kw");
-    set_step_delay(100);
-    find_center();
-    turn_off();
-
-    return 0;
-}
 
 void turn_right() {
   turn_left();
   turn_left();
   turn_left();
+}
+bool check(){
+  step();
+  if(beepers_present()){
+    turn_left();
+    turn_left();
+    step();
+    turn_left();
+    turn_left();
+    return true;
+
+  }else{
+    turn_left();
+    turn_left();
+    step();
+    turn_left();
+    turn_left();
+    return false;
+    }
 }
 
 void find_center() {
@@ -155,23 +163,4 @@ void find_center() {
       turn_right();
     }
   }
-}
-bool check(){
-  step();
-  if(beepers_present()){
-    turn_left();
-    turn_left();
-    step();
-    turn_left();
-    turn_left();
-    return true;
-
-  }else{
-    turn_left();
-    turn_left();
-    step();
-    turn_left();
-    turn_left();
-    return false;
-    }
 }

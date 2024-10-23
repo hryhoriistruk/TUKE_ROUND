@@ -3,16 +3,7 @@
 //
 #include "superkarel.h"
 
-void turn_right();
-void chess_board();
 
-int main(){
-    turn_on("task_6.kw");
-    chess_board();
-    turn_off();
-
-    return 0;
-}
 void turn_right(){
   turn_left();
   turn_left();

@@ -3,14 +3,7 @@
 //
 #include "superkarel.h"
 
-void find_south_east();
 
-int main(){
-  turn_on("task_2.kw");
-  find_south_east();
-  turn_off();
-  return 0;
-}
 
 void find_south_east(){
   while(not_facing_south()){
