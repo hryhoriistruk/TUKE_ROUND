@@ -3,19 +3,18 @@
 //
 #include "superkarel.h"
 
-void turn_right();
-void divide_even_beepers();
-void divide_beepers();
-
-
-int main(){
-    turn_on("task_8.kw");
-    divide_even_beepers();
-
-
-    turn_off();
-
-    return 0;
+void divide_beepers(){
+  put_beeper();
+  step();
+  put_beeper();
+  turn_left();
+  turn_left();
+  if (beepers_in_bag()){
+    divide_beepers();
+  }
+  else{
+    return;
+  }
 }
 
 void turn_right(){
@@ -39,17 +38,4 @@ void divide_even_beepers(){
   turn_left();
   turn_left();
 
-}
-void divide_beepers(){
-  put_beeper();
-  step();
-  put_beeper();
-  turn_left();
-  turn_left();
-  if (beepers_in_bag()){
-    divide_beepers();
-  }
-  else{
-    return;
-  }
 }

@@ -3,18 +3,6 @@
 //
 #include "superkarel.h"
 
-void turn_right();
-void x_mas();
-
-int main(){
-    turn_on("task_7.kw");
-    x_mas();
-
-    turn_off();
-
-    return 0;
-}
-
 void turn_right(){
     turn_left();
     turn_left();

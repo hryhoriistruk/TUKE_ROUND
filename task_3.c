@@ -3,13 +3,7 @@
 //
 #include "superkarel.h"
 
-bool facing_vertical();
 
-int main(){
-    turn_on("task_2.kw");
-    turn_off();
-    return 0;
-}
 bool facing_vertical(){
   if (facing_south() && facing_north()){
 

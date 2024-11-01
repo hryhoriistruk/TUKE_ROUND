@@ -3,15 +3,10 @@
 //
 #include "superkarel.h"
 
-void olympics();
-void turn_right();
-
-int main(){
-    turn_on("task_5.kw");
-    olympics();
-    turn_off();
-
-    return 0;
+void turn_right(){
+  turn_left();
+  turn_left();
+  turn_left();
 }
 
 void olympics(){
@@ -31,8 +26,3 @@ void olympics(){
   }
 }
 
-void turn_right(){
-  turn_left();
-  turn_left();
-  turn_left();
-}
