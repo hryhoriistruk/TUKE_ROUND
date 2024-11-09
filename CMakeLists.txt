@@ -3,4 +3,4 @@ project(Round)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Round main.cpp)
+add_executable(Round round1/main.cpp)
