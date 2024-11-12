@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 int is_white(const char c){
     if(c=='\n' || c=='\t' || c==' '){
@@ -30,6 +31,7 @@ int guess_eval(const int guess, const int my_number){
     else if(my_number > guess){
         return 2;
     }
+    return 0;
 }
 
 
@@ -113,10 +115,60 @@ void swap_sign(const int size, int array[]){
     }
     for (int i = 0; i < size; i++)
     {
-
-        //array[i] =  array[i] * -1;
         array[i] *= -1;
     }
+}
+
+int div_by_3(const int num){
+    if(num % 3 == 0){
+        return 1;
+    }
+    return 0;
+}
+
+int same_case(const char a, const char b){
+    if(!isalpha(a) || !isalpha(b)){
+        return -1;
+    }
+    if((isupper(a) && isupper(b)) || (!isupper(a) && !isupper(b))){
+        return 1;
+    }
+    return 0;
+}
+
+int find_first_A(const char string[]){
+    if(string == NULL){
+        return -1;
+    }
+    for(int i = 0; i < strlen(string);i++){
+        if(string[i] == 'a' || string[i] == 'A'){
+            return i;
+        }
+    }
+    return -1;
+}
+
+void string_to_upper(char string[]){
+    if(string == NULL){
+        return;
+    }
+
+    for(int i = 0; i < strlen(string); i++){
+        if(islower(string[i])){
+            string[i] = toupper(string[i]);
+        }
+    }
+}
+
+int is_prime(const int num){
+    if (num <= 1) return 0;
+    if (num <= 3) return 1;
+    if (num % 2 == 0 || num % 3 == 0) return 0;
+
+    for (int i = 5; i * i <= num; i += 6) {
+        if (num % i == 0 || num % (i + 2) == 0) return 0;
+    }
+    return 1;
 }
 
 
