@@ -13,13 +13,14 @@ int is_white(const char c){
     return 0;
 }
 
-void chainge_whites(char string[]){
+void change_whites(char string[]){
     for(int i = 0; string[i] != '\0'; i++){
         if(string[i] == ' ' || string[i] == '\n'){
             string[i] = '.';
         }
     }
 }
+
 
 int guess_eval(const int guess, const int my_number){
     if(my_number == guess){
@@ -35,6 +36,8 @@ int guess_eval(const int guess, const int my_number){
 }
 
 
+
+
 int count_positives(const int size, const int array[]){
     int count = 0;
     for(int i = 0; i < size; i++){
@@ -44,6 +47,8 @@ int count_positives(const int size, const int array[]){
     }
     return count;
 }
+
+
 
 int count_whites(const char string[]){
     int count = 0;
@@ -55,14 +60,14 @@ int count_whites(const char string[]){
     return count;
 }
 
+
+
 int direction_correction(const int degree){
     int degree_1 = degree;
     if(degree < 0){
         return -1;
     }
-    else{
 
-    }
     while (degree_1 >= 360)
     {
         degree_1 = degree_1 - 360;
@@ -87,7 +92,12 @@ int all_positives(const int size, const int array[]){
     return 1;
 }
 
+
+
 int last_positive(const int size, const int array[]){
+    if(array == NULL){
+        return -1;
+    }
     int cur_last_positive = -1;
     for(int i = 0; i < size; i++){
         if(array[i] > 0){
@@ -96,6 +106,8 @@ int last_positive(const int size, const int array[]){
     }
     return cur_last_positive;
 }
+
+
 
 int binary_num(const int num){
     if(num == 1 || num == 0){
@@ -109,6 +121,7 @@ int binary_num(const int num){
     }
     return 0;
 }
+
 void swap_sign(const int size, int array[]){
     if(array == NULL){
             return;
@@ -118,6 +131,7 @@ void swap_sign(const int size, int array[]){
         array[i] *= -1;
     }
 }
+
 
 int div_by_3(const int num){
     if(num % 3 == 0){
@@ -136,6 +150,8 @@ int same_case(const char a, const char b){
     return 0;
 }
 
+
+
 int find_first_A(const char string[]){
     if(string == NULL){
         return -1;
@@ -147,6 +163,8 @@ int find_first_A(const char string[]){
     }
     return -1;
 }
+
+
 
 void string_to_upper(char string[]){
     if(string == NULL){
@@ -172,9 +190,27 @@ int is_prime(const int num){
 }
 
 
+int leap_year(int year) {
+
+    if(year < 1 || year > 4443){
+        return -1;
+    }
+
+
+    if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+        return 1;
+    }
+    return 0;
+}
 
 
 int main(){
+//    int array[] = {1,0,3,4,-1};
+//    char arr[] = {'f','1','f','s'};
+//
+//    printf("%d", leap_year(4444) );
+//
 
-  return 0;
+    return 0;
 }
+
