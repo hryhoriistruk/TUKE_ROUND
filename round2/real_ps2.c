@@ -13,7 +13,7 @@ int is_white(const char c){
     return 0;
 }
 
-void chainge_whites(char string[]){
+void change_whites(char string[]){
     for(int i = 0; string[i] != '\0'; i++){
         if(string[i] == ' ' || string[i] == '\n'){
             string[i] = '.';
@@ -170,6 +170,13 @@ int is_prime(const int num){
     }
     return 1;
 }
+int leap_year(int year) {
+
+    if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+        return 1;
+    }
+    return 0;
+    }
 
 
 
