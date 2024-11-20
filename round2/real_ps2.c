@@ -188,13 +188,7 @@ int is_prime(const int num){
     }
     return 1;
 }
-int leap_year(int year) {
 
-    if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
-        return 1;
-    }
-    return 0;
-    }
 
 
 int leap_year(int year) {
