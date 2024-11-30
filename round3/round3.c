@@ -42,7 +42,7 @@ int vowels_count_2d(const int rows, const int cols, char strings[][cols]) {
 }
 int is_in_array_2d(int num, int size, int array[][size]) {
     if (array == NULL) {
-        return 0;
+        return -1;
     }
 
     for (int i = 0; i < size; i++) {
