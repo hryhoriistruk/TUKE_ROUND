@@ -171,6 +171,7 @@ int main() {
 
 
     printf("%d\n", count_zeroes_2d(2, array6));
+    // 2
     char array9[3][31] = {
         "Hello",
         "Hello, how are you?",
