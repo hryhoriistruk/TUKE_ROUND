@@ -103,6 +103,26 @@ int largest_col(int size, int array[size][size]) {
 
     return largest_index;
 }
+int longest_row(int rows, int cols, char array[rows][cols]) {
+    int longest_index = -1;
+    int longest_length = 0;
+    for (int i = 0; i < rows; i++) {
+        int current_length = 0;
+        for (int j = 0; j < cols; j++) {
+            if (array[i][j] != '\0') {
+                current_length++;
+            } else {
+                break;
+            }
+        }
+        if (current_length > longest_length) {
+            longest_length = current_length;
+            longest_index = i;
+        }
+    }
+
+    return longest_index;
+}
 
 int count_zeroes_2d(int size, int array6[size][size]) {
     int count = 0;
@@ -151,4 +171,12 @@ int main() {
 
 
     printf("%d\n", count_zeroes_2d(2, array6));
+    char array9[3][31] = {
+        "Hello",
+        "Hello, how are you?",
+        "I hope today is a lucky day..."
+        };
+    printf("%d\n", longest_row(3, 31, array9));
+    // 2
+
 }
