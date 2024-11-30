@@ -56,15 +56,19 @@ int is_in_array_2d(int num, int size, int array[][size]) {
     return 0;
 }
 
-int largest_line(int size, int array3[size][size]) {
-    int largest_value = array3[0][0];
+int largest_line(const int size, int array[][size]) {
+    if (array == NULL || size <= 0) {
+        return -1;
+    }
+
+    int largest_value = array[0][0];
     int largest_index = 0;
 
     for (int i = 0; i < size; i++) {
-        int row_max = array3[i][0];
+        int row_max = array[i][0];
         for (int j = 1; j < size; j++) {
-            if (array3[i][j] > row_max) {
-                row_max = array3[i][j];
+            if (array[i][j] > row_max) {
+                row_max = array[i][j];
             }
         }
         if (row_max > largest_value) {
@@ -76,6 +80,11 @@ int largest_line(int size, int array3[size][size]) {
     return largest_index;
 }
 void swap_case_2d(int rows, int cols, char strings[][cols]) {
+
+    if (strings == NULL || rows <= 0 || cols <= 0) {
+        return;
+    }
+
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
             if (strings[i][j] >= 'A' && strings[i][j] <= 'Z') {
@@ -86,7 +95,12 @@ void swap_case_2d(int rows, int cols, char strings[][cols]) {
         }
     }
 }
-int largest_col(int size, int array[size][size]) {
+int largest_col(const int size, int array[][size]) {
+
+    if (array == NULL || size <= 0) {
+        return -1;
+    }
+
     int largest_sum = 0;
     int largest_index = 0;
 
@@ -103,7 +117,12 @@ int largest_col(int size, int array[size][size]) {
 
     return largest_index;
 }
-int longest_row(int rows, int cols, char array[rows][cols]) {
+int longest_row(const int rows, const int cols, char array[][cols]) {
+
+    if (array == NULL || rows <= 0 || cols <= 0) {
+        return -1;
+    }
+
     int longest_index = -1;
     int longest_length = 0;
     for (int i = 0; i < rows; i++) {
@@ -124,12 +143,17 @@ int longest_row(int rows, int cols, char array[rows][cols]) {
     return longest_index;
 }
 
-int count_zeroes_2d(int size, int array6[size][size]) {
+int count_zeroes_2d(const int size, int array[][size]) {
+
+    if (array == NULL || size <= 0) {
+        return -1;
+    }
+
     int count = 0;
 
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
-            if (array6[i][j] == 0) {
+            if (array[i][j] == 0) {
                 count++;
             }
         }
@@ -137,7 +161,12 @@ int count_zeroes_2d(int size, int array6[size][size]) {
 
     return count;
 }
-void swap_sign_2d(int size, int array[size][size]) {
+void swap_sign_2d(const int size, int array[][size]) {
+
+    if (array == NULL || size <= 0) {
+        return;
+    }
+
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
             if (array[i][j] > 0) {
