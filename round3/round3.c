@@ -1,6 +1,23 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+int max_2d(const int size, int array[][size]){
+    if(array == NULL){
+        return -1;
+    }
+    int max = array[0][0];
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            if(max < array[i][j]){
+                max = array[i][j];
+            }
+        }
+    }
+    return max;
+}
+
 int max_2d(const int size, int array[][size]) {
     if (array == NULL) {
         return -1;
