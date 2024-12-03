@@ -18,6 +18,74 @@ int max_2d(const int size, int array[][size]){
     return max;
 }
 
+
+int vowels_count(const int rows, const int cols, char string[][cols]){
+    if(string == NULL){
+        return -1;
+    }
+    int count = 0;
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            if(string[i][j] == 'a' || string[i][j] == 'A' || string[i][j] == 'i' || string[i][j] == 'I' || string[i][j] == 'o' || string[i][j] == 'O' || string[i][j] == 'e' || string[i][j] == 'E' || string[i][j] == 'u' || string[i][j] == 'U'){
+                count++;
+            }
+        }
+    }
+    return count;
+}
+
+int is_in_array_2d(const int num, const int size, int array[][size]){
+    if(array == NULL){
+        return -1;
+    }
+
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size; j++)
+        {
+            if(num == array[i][j]){
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+
+int largest_line(const int size, int array[][size]){
+    if(array == NULL){
+        return -1;
+    }
+
+    int k = 0;
+    int return_index;
+    for (int i = 0; i < size; i++)
+    {
+        int count = 0;
+        for (int j = 0; j < size; j++)
+        {
+            count = count + array[i][j];
+        }
+        if(i == 0){
+            k = count;
+            return_index = 0;
+        }
+        else{
+            if(k < count){
+                k = count;
+                return_index = i;
+            }
+        }
+
+    }
+    return return_index;
+}
+
+
+
+
+
 int max_2d(const int size, int array[][size]) {
     if (array == NULL) {
         return -1;
