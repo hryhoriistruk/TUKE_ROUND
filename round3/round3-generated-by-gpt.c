@@ -17,7 +17,7 @@ int max_2d(const int size, int array[][size]) {
 
     return max;
 }
-int vowels_count_2d(const int rows, const int cols, char strings[][cols]) {
+int vowels_count(const int rows, const int cols, char strings[][cols]) {
     if (strings == NULL) {
         return -1;
     }
