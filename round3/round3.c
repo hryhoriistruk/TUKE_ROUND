@@ -103,7 +103,7 @@ void swap_case_2d(const int rows, const int cols, char string[][cols]) {
   }
 }
 
-int largest_col(const int size, int array[][size]) { // Те саме, що і largest_line, але поміняні лише два символи
+int largest_col(const int size, int array[][size]) { // РўРµ СЃР°РјРµ, С‰Рѕ С– largest_line, Р°Р»Рµ РїРѕРјС–РЅСЏРЅС– Р»РёС€Рµ РґРІР° СЃРёРјРІРѕР»Рё
   if (array == NULL) {
     return -1;
   }
@@ -113,7 +113,7 @@ int largest_col(const int size, int array[][size]) { // Те саме, що і l
   for (int i = 0; i < size; i++) {
     int sum = 0;
     for (int j = 0; j < size; j++) {
-      sum += array[j][i]; // [j][i] замість [i][j]
+      sum += array[j][i]; // [j][i] Р·Р°РјС–СЃС‚СЊ [i][j]
     }
     if (max_sum == NULL) {
       max_sum = sum;
