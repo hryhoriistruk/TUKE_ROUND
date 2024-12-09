@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include <ctype.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 
 int max_2d(const int size, int array[][size]){
@@ -107,7 +107,7 @@ void swap_case_2d(const int size, char array[][size]){
     }
 }
 
-int largest_col_2d(int size, int array[][size]){
+int largest_col(int size, int array[][size]){
     if(array == NULL){
         return -1;
     }
