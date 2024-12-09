@@ -1,9 +1,5 @@
 #include <stdio.h>
-#include <stdbool.h>
-#include <stdlib.h>
-#include <string.h>
 #include <ctype.h>
-
 
 int max_2d(const int size, int array[][size]){
     if(array == NULL){
@@ -103,11 +99,11 @@ void swap_case_2d(const int size, char array[][size]){
                     array[i][j] = toupper(array[i][j]);
                 }
             }
-        }
+        } 
     }
 }
 
-int largest_col(int size, int array[][size]){
+int largest_col_2d(int size, int array[][size]){
     if(array == NULL){
         return -1;
     }
@@ -128,21 +124,74 @@ int largest_col(int size, int array[][size]){
     return biggest_col_index;
 }
 
+int count_zeros_2d(const int size, int array[][size]){
+    if(array == NULL){
+        return -1;
+    }
+    int count = 0;
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size; j++)
+        {
+            if(array[i][j] == 0){
+                count++;
+            }
+        }
+    }
+    return count;
+}
+
+void swap_sign_2d(int size, int array[][size]){
+    if(array == NULL){
+        return;
+    }
+
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size; j++)
+        {
+            array[i][j] = array[i][j] * -1;
+        }
+    }
+}
+
+int largers_row_2d(const int rows, const int cols, char array[rows][cols]){
+    if(array == NULL || rows < 1 || cols < 1){
+        return -1;
+    }
+    int longest_array_length = 0;
+    int res = 0;
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            if(array[i][j] == '\0'){
+                if(longest_array_length < j){
+                    longest_array_length = j;
+                    res = i;
+                }
+                break;
+            }
+        }
+    }
+    return res;
+}
+
 
 int main(){
-    int array[4][4] =   {
-            {1, 2, 30, 4},
-            {2, 5, 3, 4},
-            {3, 20, 3, 40},
-            {4, -1, -3, 44}
-    };
+    int array[4][4] =   {             
+                           {1, -2, 30, 4}, 
+                           {2, 0, 3, 4},
+                           {3, 20, 0, 40},
+                           {4, -1, -3, 0}
+                        };                
     char vowels[6][6] = {
-            "AAAAAA",
-            "aaddaa",
-            "aadda-",
-            "UeddiO",
-            "aaddio",
-            "aaddio",
+        "AAAAAA",
+        "aaddaa",
+        "aadda-",
+        "UeddiO",
+        "aaddio",
+        "aaddio",
     };
     printf("max value in 2d array: %d\n", max_2d(4, array));
     printf("vowels count: %d\n", vowels_count(6, 6, vowels));
@@ -160,4 +209,24 @@ int main(){
         printf("\n");
     }
     printf("Largest col 2d: %d\n", largest_col_2d(4, array));
+    printf("Count zeros: %d\n", count_zeros_2d(4, array));
+    printf("Swap sign 2d:\n");
+    swap_sign_2d(4, array);
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            printf("%3d", array[i][j]);
+        }
+        printf("\n");
+    }
+    char array_1[4][6] = {
+        "s",
+        "dsfsd",
+        "dd",
+        "a",
+    };
+
+    printf("Largest row 2d: %d", largers_row_2d(4, 6, array_1));
 }
+
