@@ -181,6 +181,22 @@ int largers_row_2d(const int rows, const int cols, char array[rows][cols]){
 }
 
 
+
+bool contains_char_2d(char array[], char value) {
+  if (array == NULL) {
+    return false;
+  }
+
+  for (int i = 0; i < strlen(array); i++) {
+    if (array[i] == value) {
+      return true;
+    }
+  }
+  return false;
+}
+
+
+
 int main(){
     int array[4][4] =   {             
                            {1, -2, 30, 4}, 
